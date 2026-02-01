@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rich Lee Overman's Homepage</title>
+    <title>Rich Lee Overman | Biotechnology Engineer</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -17,7 +17,7 @@
         }
         h1 {
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             background: linear-gradient(90deg, #00d4ff, #7b2cbf);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -25,8 +25,14 @@
         }
         .subtitle {
             color: #888;
-            margin-bottom: 40px;
             font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .tagline {
+            color: #aaa;
+            font-size: 1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
         .social {
             margin-bottom: 30px;
@@ -38,23 +44,88 @@
             transition: color 0.3s;
         }
         .social a:hover { color: #7b2cbf; }
+        
         .section-title {
-            font-size: 1.3em;
+            font-size: 1.4em;
             color: #00d4ff;
-            margin: 30px 0 15px;
+            margin: 40px 0 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #7b2cbf;
         }
+        
+        .bio-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 20px;
+        }
+        .bio-card h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+        .bio-card p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+        
+        .experience-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 3px solid #7b2cbf;
+        }
+        .experience-item h4 {
+            color: #00d4ff;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .experience-item .company {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .experience-item .date {
+            color: #7b2cbf;
+            font-size: 0.85em;
+            float: right;
+            margin-top: -30px;
+        }
+        .experience-item ul {
+            color: #ccc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .experience-item li {
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+        
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .skill-tag {
+            background: rgba(123,44,191,0.3);
+            color: #c77dff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-bottom: 30px;
         }
         .project-card {
             background: rgba(255,255,255,0.05);
             border-radius: 12px;
-            padding: 20px;
+            overflow: hidden;
             border: 1px solid rgba(255,255,255,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -62,111 +133,229 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0,212,255,0.2);
         }
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .project-card-content {
+            padding: 20px;
+        }
         .project-card h3 {
             color: #00d4ff;
             margin-bottom: 10px;
-            font-size: 1.2em;
+            font-size: 1.15em;
         }
         .project-card p {
             color: #aaa;
-            font-size: 0.95em;
+            font-size: 0.9em;
             line-height: 1.5;
             margin-bottom: 10px;
         }
         .project-card .tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
+            gap: 6px;
+            margin-top: 12px;
         }
         .tech-tag {
             background: rgba(123,44,191,0.3);
             color: #c77dff;
             padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
+            border-radius: 15px;
+            font-size: 0.75em;
         }
         .project-card a {
             color: #00d4ff;
             text-decoration: none;
+            font-size: 0.9em;
             display: inline-block;
             margin-top: 10px;
         }
         .project-card a:hover { text-decoration: underline; }
+        
         .footer {
-            margin-top: 40px;
-            padding-top: 20px;
+            margin-top: 50px;
+            padding-top: 25px;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: #666;
             font-size: 0.9em;
         }
         .bitcoin {
-            background: rgba(255,165,0,0.2);
+            background: rgba(255,165,0,0.15);
             color: #ffa500;
             padding: 15px;
             border-radius: 8px;
             margin-top: 20px;
             word-break: break-all;
             font-family: monospace;
+            font-size: 0.85em;
         }
         .bitcoin-label {
             color: #888;
-            font-size: 0.85em;
+            font-size: 0.8em;
             margin-bottom: 5px;
+        }
+        .contact-info {
+            color: #888;
+            margin-bottom: 15px;
+        }
+        .contact-info a {
+            color: #00d4ff;
         }
     </style>
 </head>
 <body>
 
     <h1>Rich Lee Overman</h1>
-    <p class="subtitle">Engineer & Maker • Building things that work</p>
+    <p class="subtitle">Biotechnology Engineer & Maker</p>
+    <p class="tagline">Bridging biotechnology manufacturing with hands-on engineering. Building solutions that bridge science and practical applications.</p>
     
-    <div class="social">
-        <a href="https://x.com/RichLeeOverman" target="_blank">𝕏 @RichLeeOverman</a>
-        <a href="https://www.linkedin.com/in/richard-overman-699415115" target="_blank">in LinkedIn</a>
+    <div class="contact-info">
+        <a href="mailto:richard.overman@gmail.com">richard.overman@gmail.com</a> • 
+        <a href="https://x.com/RichLeeOverman" target="_blank">@RichLeeOverman</a> • 
+        <a href="https://www.linkedin.com/in/richard-overman-699415115" target="_blank">LinkedIn</a>
+    </div>
+
+    <h2 class="section-title">💼 Experience</h2>
+    
+    <div class="experience-item">
+        <span class="date">Feb 2025 – Present</span>
+        <h4>Lab QC/QA/Purchasing Specialist</h4>
+        <div class="company">Woodcreek Provider Services | Puyallup, WA</div>
+        <ul>
+            <li>Managing CLIA compliance for point of care testing labs in pediatric clinics</li>
+            <li>Proficiency testing for CLIA compliant moderate complexity testing equipment</li>
+            <li>Medical lab policy revision and equipment troubleshooting</li>
+            <li>Purchasing supplies for pediatric clinics</li>
+        </ul>
+    </div>
+    
+    <div class="experience-item">
+        <span class="date">Oct 2021 – Apr 2024</span>
+        <h4>Principal Research Associate</h4>
+        <div class="company">Universal Cells – Astellas | Seattle, WA</div>
+        <ul>
+            <li>Mentoring junior staff and leading rAAV edited stem cell production campaigns</li>
+            <li>Python engineering for Integra ViaFlow pipetting device software solutions</li>
+            <li>Developing operator feedback tools for continuous improvement</li>
+        </ul>
+        <div class="skills-grid">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">cGMP</span>
+            <span class="skill-tag">Cell Culture</span>
+            <span class="skill-tag">rAAV Production</span>
+        </div>
+    </div>
+    
+    <div class="experience-item">
+        <span class="date">Oct 2018 – Oct 2021</span>
+        <h4>Senior Research Associate</h4>
+        <div class="company">Universal Cells – Astellas | Seattle, WA</div>
+        <ul>
+            <li>Training operators in cGMP production facility</li>
+            <li>Batch record reviews for team of cGMP operators</li>
+            <li>Maintaining library of programs for automatic pipetting devices</li>
+            <li>Mammalian cell culture for stem cell production campaigns</li>
+        </ul>
+    </div>
+    
+    <div class="experience-item">
+        <span class="date">Nov 2017 – Oct 2018</span>
+        <h4>Cell Culture Technician III</h4>
+        <div class="company">NantKwest | Los Angeles, CA</div>
+        <ul>
+            <li>Producing large-scale allogeneic cell therapies in GMP facility</li>
+            <li>SME for GE Xuri bioreactors and GE XDR stir tank bioreactors</li>
+            <li>Lean Manufacturing exposure and SOP authoring</li>
+        </ul>
+    </div>
+    
+    <div class="experience-item">
+        <span class="date">2014 – 2017</span>
+        <h4>Process Development / Cell Production Associate III</h4>
+        <div class="company">Fred Hutchinson Cancer Research Center | Seattle, WA</div>
+        <ul>
+            <li>Evening Shift Supervisor for CAR T-cell and gene-modified stem cell manufacturing</li>
+            <li>Tech transfer from pre-clinical to GMP clinical production</li>
+            <li>Flow cytometry panel design and CTL function characterization</li>
+            <li>Cross-functional coordination with QC, QA, and Clinical Staff</li>
+        </ul>
+        <div class="skills-grid">
+            <span class="skill-tag">CAR T-Cells</span>
+            <span class="skill-tag">cGMP</span>
+            <span class="skill-tag">Flow Cytometry</span>
+            <span class="skill-tag">ELISA</span>
+            <span class="skill-tag">Bioreactors</span>
+        </div>
+    </div>
+
+    <h2 class="section-title">🛠️ Core Skills</h2>
+    <div class="bio-card">
+        <div class="skills-grid">
+            <span class="skill-tag">cGMP Manufacturing</span>
+            <span class="skill-tag">Cell Therapy Production</span>
+            <span class="skill-tag">Python Programming</span>
+            <span class="skill-tag">CLIA Compliance</span>
+            <span class="skill-tag">Bioreactor Operations</span>
+            <span class="skill-tag">Flow Cytometry</span>
+            <span class="skill-tag">SOP & Batch Record Authoring</span>
+            <span class="skill-tag">Equipment IQOQ</span>
+            <span class="skill-tag">Staff Training</span>
+            <span class="skill-tag">Process Troubleshooting</span>
+        </div>
     </div>
 
     <h2 class="section-title">🚀 Projects</h2>
     
     <div class="project-grid">
         <div class="project-card">
-            <h3>🚁 Quadcopter</h3>
-            <p>Full-featured quadcopter built from scratch: custom flight controller PCB design, firmware development, and hardware integration. Takes to the air with PID control algorithms.</p>
-            <div class="tech">
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">PCB Design</span>
-                <span class="tech-tag">Flight Control</span>
-                <span class="tech-tag">PID</span>
+            <img src="https://raw.githubusercontent.com/RichardO82/Quadcopter/main/FC_Board.jpg" alt="Quadcopter Flight Controller PCB">
+            <div class="project-card-content">
+                <h3>🚁 Quadcopter</h3>
+                <p>Custom quadcopter built from scratch with flight controller PCB design, firmware in Spin/C++, and ground control software. Features PID control and Xbee radio communication.</p>
+                <div class="tech">
+                    <span class="tech-tag">C++ / Spin</span>
+                    <span class="tech-tag">PCB Design</span>
+                    <span class="tech-tag">Flight Control</span>
+                    <span class="tech-tag">PID</span>
+                </div>
+                <a href="https://github.com/RichardO82/Quadcopter" target="_blank">View on GitHub →</a>
             </div>
-            <a href="https://github.com/RichardO82/Quadcopter" target="_blank">View on GitHub →</a>
         </div>
         
         <div class="project-card">
-            <h3>💡 ADT-Lights</h3>
-            <p>Smart aquarium lighting with ESP32 controller. Annual Daylight Timer (ADT) simulates natural light cycles for fish health. LED strip + ambient lighting with web-based control.</p>
-            <div class="tech">
-                <span class="tech-tag">ESP32</span>
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">IoT</span>
-                <span class="tech-tag">LED Control</span>
+            <img src="https://raw.githubusercontent.com/RichardO82/ADT-Lights/main/docs/aquarium.jpg" alt="ADT-Lights Aquarium Setup" onerror="this.style.display='none'">
+            <div class="project-card-content">
+                <h3>💡 ADT-Lights</h3>
+                <p>Smart aquarium lighting with ESP32 controller using Annual Daylight Timer (ADT) to simulate natural light cycles. Web-based control interface.</p>
+                <div class="tech">
+                    <span class="tech-tag">ESP32</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">IoT</span>
+                    <span class="tech-tag">LED Control</span>
+                </div>
+                <a href="https://github.com/RichardO82/ADT-Lights" target="_blank">View on GitHub →</a>
             </div>
-            <a href="https://github.com/RichardO82/ADT-Lights" target="_blank">View on GitHub →</a>
         </div>
         
         <div class="project-card">
-            <h3>🕐 Year-Clock</h3>
-            <p>Unique timepiece with twelve 8-segment displays showing time as fractional years (1E-7 precision). A creative take on time representation using decimal fractions.</p>
-            <div class="tech">
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">Embedded</span>
-                <span class="tech-tag">Display</span>
+            <img src="https://raw.githubusercontent.com/RichardO82/Year-Clock/main/Housing.step.png" alt="Year-Clock Housing" onerror="this.style.display='none'">
+            <div class="project-card-content">
+                <h3>🕐 Year-Clock</h3>
+                <p>Unique timepiece with twelve 8-segment displays showing time as fractional years (1E-7 precision). Creative embedded systems project.</p>
+                <div class="tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Embedded</span>
+                    <span class="tech-tag">3D Printing</span>
+                </div>
+                <a href="https://github.com/RichardO82/Year-Clock" target="_blank">View on GitHub →</a>
             </div>
-            <a href="https://github.com/RichardO82/Year-Clock" target="_blank">View on GitHub →</a>
         </div>
     </div>
 
     <div class="footer">
-        <p>Interested in collaboration or have a project idea? Let's build something.</p>
+        <p>Building at the intersection of biotechnology and engineering.</p>
         
         <div class="bitcoin">
             <div class="bitcoin-label">Bitcoin donations welcome:</div>
