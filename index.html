@@ -1,23 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Lee Overman's Homepage</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        .social {
+            margin-bottom: 30px;
+        }
+        .social a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+        .social a:hover { color: #7b2cbf; }
+        .section-title {
+            font-size: 1.3em;
+            color: #00d4ff;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #7b2cbf;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+        }
+        .project-card h3 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .project-card p {
+            color: #aaa;
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .project-card .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .tech-tag {
+            background: rgba(123,44,191,0.3);
+            color: #c77dff;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+        .project-card a {
+            color: #00d4ff;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .project-card a:hover { text-decoration: underline; }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+            font-size: 0.9em;
+        }
+        .bitcoin {
+            background: rgba(255,165,0,0.2);
+            color: #ffa500;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            word-break: break-all;
+            font-family: monospace;
+        }
+        .bitcoin-label {
+            color: #888;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
 <body>
 
-<h1>Rich Lee Overman's Homepage</h1>
+    <h1>Rich Lee Overman</h1>
+    <p class="subtitle">Engineer & Maker • Building things that work</p>
+    
+    <div class="social">
+        <a href="https://x.com/RichLeeOverman" target="_blank">𝕏 @RichLeeOverman</a>
+        <a href="https://www.linkedin.com/in/richard-overman-699415115" target="_blank">in LinkedIn</a>
+    </div>
 
-<p>X: @RichLeeOverman</p>
+    <h2 class="section-title">🚀 Projects</h2>
+    
+    <div class="project-grid">
+        <div class="project-card">
+            <h3>🚁 Quadcopter</h3>
+            <p>Full-featured quadcopter built from scratch: custom flight controller PCB design, firmware development, and hardware integration. Takes to the air with PID control algorithms.</p>
+            <div class="tech">
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">PCB Design</span>
+                <span class="tech-tag">Flight Control</span>
+                <span class="tech-tag">PID</span>
+            </div>
+            <a href="https://github.com/RichardO82/Quadcopter" target="_blank">View on GitHub →</a>
+        </div>
+        
+        <div class="project-card">
+            <h3>💡 ADT-Lights</h3>
+            <p>Smart aquarium lighting with ESP32 controller. Annual Daylight Timer (ADT) simulates natural light cycles for fish health. LED strip + ambient lighting with web-based control.</p>
+            <div class="tech">
+                <span class="tech-tag">ESP32</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">IoT</span>
+                <span class="tech-tag">LED Control</span>
+            </div>
+            <a href="https://github.com/RichardO82/ADT-Lights" target="_blank">View on GitHub →</a>
+        </div>
+        
+        <div class="project-card">
+            <h3>🕐 Year-Clock</h3>
+            <p>Unique timepiece with twelve 8-segment displays showing time as fractional years (1E-7 precision). A creative take on time representation using decimal fractions.</p>
+            <div class="tech">
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Embedded</span>
+                <span class="tech-tag">Display</span>
+            </div>
+            <a href="https://github.com/RichardO82/Year-Clock" target="_blank">View on GitHub →</a>
+        </div>
+    </div>
 
-<p>
-  <a href="https://github.com/RichardO82/Quadcopter">Quadcopter Project - Github Repo</a><br>
-  <a href="https://github.com/RichardO82/ADT-Lights">Fancy Aquarium Lights - Github Repo</a><br>
-  <a href="https://github.com/RichardO82/Year-Clock">A clock that tells time as the year to 8 decimal places - Github Repo</a>
-</p>
-<!--  <img src="sendmebitcoin.png" alt="Bitcoin address: 3NSJcpEr5NrU4JV8uH2L1ZpKLdrEBiMQfi"><br><br> -->
-<p>
- 
-  Send Bitcoin to: 3NSJcpEr5NrU4JV8uH2L1ZpKLdrEBiMQfi
-</p>
+    <div class="footer">
+        <p>Interested in collaboration or have a project idea? Let's build something.</p>
+        
+        <div class="bitcoin">
+            <div class="bitcoin-label">Bitcoin donations welcome:</div>
+            3NSJcpEr5NrU4JV8uH2L1ZpKLdrEBiMQfi
+        </div>
+    </div>
 
 </body>
 </html>
-
-
