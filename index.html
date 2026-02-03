@@ -129,6 +129,13 @@
             line-height: 1.5;
             margin-bottom: 10px;
         }
+        .project-meta {
+            color: #cfcfcf;
+            font-size: 0.85em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .project-meta strong { color: #00d4ff; font-weight: 600; }
         .project-card .tech {
             display: flex;
             flex-wrap: wrap;
@@ -192,6 +199,18 @@
             border: 1px solid rgba(255,255,255,0.1);
             margin-bottom: 20px;
         }
+        .bio-card h3 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .bio-card p { color: #ccc; line-height: 1.7; }
+        .bio-highlights {
+            margin-top: 12px;
+            margin-left: 18px;
+            color: #cfcfcf;
+        }
+        .bio-highlights li { margin-bottom: 6px; }
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -235,6 +254,17 @@
     <p class="subtitle">Biotechnology Engineer & Maker</p>
     <p class="tagline">Bridging biotechnology manufacturing with hands-on engineering. Building solutions that bridge science and practical applications.</p>
 
+    <div class="bio-card">
+        <h3>About</h3>
+        <p>Biotech manufacturing specialist with 15+ years in cGMP cell therapy, process development, and QC/QA operations. I also build embedded hardware and automation projects that turn ideas into working systems.</p>
+        <ul class="bio-highlights">
+            <li>Led cGMP manufacturing for CAR‑T, gene‑modified stem cells, and rAAV programs</li>
+            <li>Built automation + tooling for pipetting systems and lab operations</li>
+            <li>Experienced in CLIA compliance, SOPs, and batch record review</li>
+            <li>Hands‑on hardware: PCB design, ESP32/IoT, embedded firmware</li>
+        </ul>
+    </div>
+
     <div class="social-links">
         <a href="https://x.com/RichLeeOverman" target="_blank" class="social-link x">
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -264,7 +294,8 @@
             <!-- thumbs removed -->
             <div class="project-card-content">
                 <h3>🚁 Quadcopter</h3>
-                <p>Custom quadcopter built from scratch with flight controller PCB design, firmware in Spin/C++, and ground control software. Features PID control and Xbee radio communication.</p>
+                <p>Custom quadcopter built from scratch with flight controller PCB design, firmware in Spin/C++, and ground control software.</p>
+                <p class="project-meta"><strong>Role:</strong> Hardware + firmware design · <strong>Tech:</strong> Spin/C++, MSP430, XBee · <strong>Result:</strong> Stable flight w/ PID control</p>
                 <div class="tech">
                     <span class="tech-tag">C++ / Spin</span>
                     <span class="tech-tag">PCB Design</span>
@@ -280,7 +311,8 @@
             <!-- thumbs removed -->
             <div class="project-card-content">
                 <h3>💡 ADT-Lights</h3>
-                <p>Smart aquarium lighting with ESP32 controller using Annual Daylight Timer (ADT) to simulate natural light cycles. Web-based control interface.</p>
+                <p>Smart aquarium lighting with ESP32 controller using Annual Daylight Timer (ADT) to simulate natural light cycles.</p>
+                <p class="project-meta"><strong>Role:</strong> System design + firmware · <strong>Tech:</strong> ESP32, BLE, LED control · <strong>Result:</strong> Automated seasonal light cycles</p>
                 <div class="tech">
                     <span class="tech-tag">ESP32</span>
                     <span class="tech-tag">C++</span>
@@ -296,7 +328,8 @@
             <!-- thumbs removed -->
             <div class="project-card-content">
                 <h3>🕐 Year-Clock</h3>
-                <p>Unique timepiece with twelve 8-segment displays showing time as fractional years (1E-7 precision). Creative embedded systems project.</p>
+                <p>Unique timepiece with twelve 8-segment displays showing time as fractional years (1E-7 precision).</p>
+                <p class="project-meta"><strong>Role:</strong> Embedded design · <strong>Tech:</strong> C++, display driving · <strong>Result:</strong> Novel year‑fraction time display</p>
                 <div class="tech">
                     <span class="tech-tag">C++</span>
                     <span class="tech-tag">Embedded</span>
